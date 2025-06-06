@@ -1,0 +1,84 @@
+[2025-05-15 16:01:18,773][root][INFO] - 
+------Config------
+ {'dataset': 'WN18RR', 'epoch': 800, 'batch_size': 256, 'learning_rate': 0.0015, 'h_dim': 200, 'pred_rel_w': True, 'label_smooth': 0.1, 'kg_layer': 1, 'rm_rate': 0.5, 'ent_drop': 0.2, 'rel_drop': 0, 'comp_op': 'mul', 'bn': True, 'k_h': 10, 'k_w': 20, 'ent_drop_pred': 0.3, 'conv_drop': 0.1, 'fc_drop': 0.4, 'ker_sz': 7, 'out_channel': 250, 'device': 1, 'max_no_improve': 50, 'cpu_worker_num': 10, 'warmup_epoch': 5}
+[2025-05-15 16:01:18,774][root][INFO] - Code dir path: /home/evsjtu/wcf/SE-GNN-main/code
+[2025-05-15 16:01:18,775][root][INFO] - Config dir path: /home/evsjtu/wcf/SE-GNN-main/config
+[2025-05-15 16:01:18,775][root][INFO] - Model save path: /home/evsjtu/wcf/SE-GNN-main/data/output/WN18RR/2025-05-15/16-01-18
+[2025-05-15 16:01:22,250][root][INFO] - kg # node: 40943
+[2025-05-15 16:01:22,258][root][INFO] - kg # edge: 173670
+[2025-05-15 16:01:22,258][root][INFO] - kg # zero deg node: 384
+[2025-05-15 16:01:22,258][root][INFO] - ---Load Train Data---
+[2025-05-15 16:01:24,031][root][INFO] - -----Model Parameter Configuration-----
+[2025-05-15 16:01:24,032][root][INFO] - Parameter ent_emb: torch.Size([40943, 200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter rel_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter edge_layers.0.w_o: torch.Size([200, 200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter edge_layers.0.w_i: torch.Size([200, 200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter edge_layers.0.neigh_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter edge_layers.0.bn.weight: torch.Size([200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter edge_layers.0.bn.bias: torch.Size([200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter node_layers.0.w_o: torch.Size([200, 200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter node_layers.0.w_i: torch.Size([200, 200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter node_layers.0.neigh_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter node_layers.0.bn.weight: torch.Size([200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter node_layers.0.bn.bias: torch.Size([200]), require_grad = True
+[2025-05-15 16:01:24,032][root][INFO] - Parameter comp_layers.0.neigh_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter comp_layers.0.w_o: torch.Size([200, 200]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter comp_layers.0.w_i: torch.Size([200, 200]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter comp_layers.0.bn.weight: torch.Size([200]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter comp_layers.0.bn.bias: torch.Size([200]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter rel_embs.0: torch.Size([22, 200]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter predictor.bias: torch.Size([40943]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter predictor.bn0.weight: torch.Size([1]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter predictor.bn0.bias: torch.Size([1]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter predictor.bn1.weight: torch.Size([64]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter predictor.bn1.bias: torch.Size([64]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter predictor.bn2.weight: torch.Size([200]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter predictor.bn2.bias: torch.Size([200]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter predictor.conv1.filter.weight: torch.Size([22, 576]), require_grad = True
+[2025-05-15 16:01:24,033][root][INFO] - Parameter predictor.conv1.bn.weight: torch.Size([64]), require_grad = True
+[2025-05-15 16:01:24,034][root][INFO] - Parameter predictor.conv1.bn.bias: torch.Size([64]), require_grad = True
+[2025-05-15 16:01:24,034][root][INFO] - Parameter predictor.fc.weight: torch.Size([200, 25600]), require_grad = True
+[2025-05-15 16:01:24,034][root][INFO] - Parameter predictor.fc.bias: torch.Size([200]), require_grad = True
+[2025-05-15 16:01:25,155][root][INFO] - Training... total epoch: 800, step: 324000
+[2025-05-15 16:06:19,214][root][INFO] - Epoch:   0 | Loss: 0.5346 | Val - MRR: 0.0003, MR: 17849.27, H@1: 0.000, H@3: 0.000, H@10: 0.000 | Test - MRR: 0.0003 | *
+[2025-05-15 16:11:08,531][root][INFO] - Epoch:   1 | Loss: 0.0022 | Val - MRR: 0.0004, MR: 16173.21, H@1: 0.000, H@3: 0.000, H@10: 0.000 | Test - MRR: 0.0005 | *
+[2025-05-15 16:15:52,679][root][INFO] - Epoch:   2 | Loss: 0.0011 | Val - MRR: 0.0036, MR: 13535.42, H@1: 0.001, H@3: 0.003, H@10: 0.006 | Test - MRR: 0.0050 | *
+[2025-05-15 16:20:40,047][root][INFO] - Epoch:   3 | Loss: 0.0009 | Val - MRR: 0.0159, MR: 12157.80, H@1: 0.008, H@3: 0.018, H@10: 0.029 | Test - MRR: 0.0186 | *
+[2025-05-15 16:25:22,529][root][INFO] - Epoch:   4 | Loss: 0.0008 | Val - MRR: 0.0200, MR: 10799.85, H@1: 0.011, H@3: 0.022, H@10: 0.038 | Test - MRR: 0.0210 | *
+[2025-05-15 16:30:05,942][root][INFO] - Epoch:   5 | Loss: 0.0008 | Val - MRR: 0.0254, MR: 10027.02, H@1: 0.013, H@3: 0.027, H@10: 0.047 | Test - MRR: 0.0266 | *
+[2025-05-15 16:34:51,593][root][INFO] - Epoch:   6 | Loss: 0.0008 | Val - MRR: 0.0297, MR: 9795.79, H@1: 0.017, H@3: 0.030, H@10: 0.053 | Test - MRR: 0.0285 | *
+[2025-05-15 16:39:35,894][root][INFO] - Epoch:   7 | Loss: 0.0008 | Val - MRR: 0.0297, MR: 9437.75, H@1: 0.017, H@3: 0.030, H@10: 0.055 | Test - MRR: 0.0316 | *
+[2025-05-15 16:44:25,633][root][INFO] - Epoch:   8 | Loss: 0.0007 | Val - MRR: 0.0329, MR: 8874.82, H@1: 0.018, H@3: 0.033, H@10: 0.061 | Test - MRR: 0.0336 | *
+[2025-05-15 16:48:54,706][root][INFO] - Epoch:   9 | Loss: 0.0007 | Val - MRR: 0.0358, MR: 8609.49, H@1: 0.021, H@3: 0.037, H@10: 0.064 | Test - MRR: 0.0359 | *
+[2025-05-15 16:53:16,427][root][INFO] - Epoch:  10 | Loss: 0.0007 | Val - MRR: 0.0359, MR: 8251.99, H@1: 0.020, H@3: 0.036, H@10: 0.067 | Test - MRR: 0.0368 | *
+[2025-05-15 16:57:28,506][root][INFO] - Epoch:  11 | Loss: 0.0007 | Val - MRR: 0.0383, MR: 7836.66, H@1: 0.022, H@3: 0.039, H@10: 0.070 | Test - MRR: 0.0373 | *
+[2025-05-15 17:01:53,851][root][INFO] - Epoch:  12 | Loss: 0.0007 | Val - MRR: 0.0421, MR: 7401.56, H@1: 0.023, H@3: 0.045, H@10: 0.076 | Test - MRR: 0.0430 | *
+[2025-05-15 17:06:12,218][root][INFO] - Epoch:  13 | Loss: 0.0007 | Val - MRR: 0.0476, MR: 7008.31, H@1: 0.029, H@3: 0.049, H@10: 0.081 | Test - MRR: 0.0466 | *
+[2025-05-15 17:10:29,653][root][INFO] - Epoch:  14 | Loss: 0.0006 | Val - MRR: 0.0504, MR: 6743.32, H@1: 0.030, H@3: 0.053, H@10: 0.088 | Test - MRR: 0.0497 | *
+[2025-05-15 17:14:49,403][root][INFO] - Epoch:  15 | Loss: 0.0006 | Val - MRR: 0.0558, MR: 6597.87, H@1: 0.033, H@3: 0.059, H@10: 0.095 | Test - MRR: 0.0565 | *
+[2025-05-15 17:19:02,007][root][INFO] - Epoch:  16 | Loss: 0.0006 | Val - MRR: 0.0671, MR: 6180.11, H@1: 0.040, H@3: 0.068, H@10: 0.119 | Test - MRR: 0.0671 | *
+[2025-05-15 17:23:12,055][root][INFO] - Epoch:  17 | Loss: 0.0006 | Val - MRR: 0.1002, MR: 5439.31, H@1: 0.065, H@3: 0.106, H@10: 0.168 | Test - MRR: 0.0956 | *
+[2025-05-15 17:27:26,203][root][INFO] - Epoch:  18 | Loss: 0.0006 | Val - MRR: 0.1368, MR: 5019.76, H@1: 0.094, H@3: 0.149, H@10: 0.218 | Test - MRR: 0.1279 | *
+[2025-05-15 17:31:59,387][root][INFO] - Epoch:  19 | Loss: 0.0006 | Val - MRR: 0.1749, MR: 4835.20, H@1: 0.129, H@3: 0.190, H@10: 0.265 | Test - MRR: 0.1656 | *
+[2025-05-15 17:36:29,948][root][INFO] - Epoch:  20 | Loss: 0.0006 | Val - MRR: 0.2140, MR: 4332.14, H@1: 0.164, H@3: 0.234, H@10: 0.307 | Test - MRR: 0.2017 | *
+[2025-05-15 17:40:58,969][root][INFO] - Epoch:  21 | Loss: 0.0006 | Val - MRR: 0.2483, MR: 4049.26, H@1: 0.196, H@3: 0.272, H@10: 0.346 | Test - MRR: 0.2360 | *
+[2025-05-15 17:45:32,945][root][INFO] - Epoch:  22 | Loss: 0.0005 | Val - MRR: 0.2698, MR: 3878.05, H@1: 0.216, H@3: 0.296, H@10: 0.367 | Test - MRR: 0.2602 | *
+[2025-05-15 17:50:07,005][root][INFO] - Epoch:  23 | Loss: 0.0005 | Val - MRR: 0.3050, MR: 3581.56, H@1: 0.250, H@3: 0.329, H@10: 0.407 | Test - MRR: 0.2960 | *
+[2025-05-15 17:54:36,827][root][INFO] - Epoch:  24 | Loss: 0.0005 | Val - MRR: 0.3293, MR: 3239.02, H@1: 0.272, H@3: 0.359, H@10: 0.430 | Test - MRR: 0.3257 | *
+[2025-05-15 17:59:03,751][root][INFO] - Epoch:  25 | Loss: 0.0005 | Val - MRR: 0.3381, MR: 3495.49, H@1: 0.283, H@3: 0.368, H@10: 0.435 | Test - MRR: 0.3344 | *
+[2025-05-15 18:03:34,145][root][INFO] - Epoch:  26 | Loss: 0.0005 | Val - MRR: 0.3507, MR: 3703.09, H@1: 0.295, H@3: 0.379, H@10: 0.454 | Test - MRR: 0.3477 | *
+[2025-05-15 18:08:03,552][root][INFO] - Epoch:  27 | Loss: 0.0005 | Val - MRR: 0.3736, MR: 3205.74, H@1: 0.320, H@3: 0.400, H@10: 0.468 | Test - MRR: 0.3740 | *
+[2025-05-15 18:12:34,424][root][INFO] - Epoch:  28 | Loss: 0.0005 | Val - MRR: 0.3847, MR: 3153.11, H@1: 0.330, H@3: 0.415, H@10: 0.480 | Test - MRR: 0.3836 | *
+[2025-05-15 18:17:05,792][root][INFO] - Epoch:  29 | Loss: 0.0005 | Val - MRR: 0.3849, MR: 2993.55, H@1: 0.333, H@3: 0.410, H@10: 0.479 | Test - MRR: 0.3867 | *
+[2025-05-15 18:21:37,420][root][INFO] - Epoch:  30 | Loss: 0.0005 | Val - MRR: 0.4011, MR: 2953.33, H@1: 0.347, H@3: 0.427, H@10: 0.496 | Test - MRR: 0.4011 | *
+[2025-05-15 18:26:08,816][root][INFO] - Epoch:  31 | Loss: 0.0005 | Val - MRR: 0.4026, MR: 2651.00, H@1: 0.347, H@3: 0.432, H@10: 0.506 | Test - MRR: 0.4053 | *
+[2025-05-15 18:30:43,921][root][INFO] - Epoch:  32 | Loss: 0.0004 | Val - MRR: 0.4097, MR: 2694.54, H@1: 0.360, H@3: 0.434, H@10: 0.502 | Test - MRR: 0.4089 | *
+[2025-05-15 18:35:01,658][root][INFO] - Epoch:  33 | Loss: 0.0004 | Val - MRR: 0.4200, MR: 2644.88, H@1: 0.369, H@3: 0.446, H@10: 0.510 | Test - MRR: 0.4220 | *
+[2025-05-15 18:39:10,551][root][INFO] - Epoch:  34 | Loss: 0.0004 | Val - MRR: 0.4238, MR: 2608.36, H@1: 0.373, H@3: 0.447, H@10: 0.512 | Test - MRR: 0.4222 | *
+[2025-05-15 18:43:11,988][root][INFO] - Epoch:  35 | Loss: 0.0004 | Val - MRR: 0.4164, MR: 2800.33, H@1: 0.364, H@3: 0.441, H@10: 0.515 | 
+[2025-05-15 18:47:22,031][root][INFO] - Epoch:  36 | Loss: 0.0004 | Val - MRR: 0.4289, MR: 2532.70, H@1: 0.379, H@3: 0.453, H@10: 0.520 | Test - MRR: 0.4282 | *
+[2025-05-15 18:51:09,348][root][INFO] - Epoch:  37 | Loss: 0.0004 | Val - MRR: 0.4255, MR: 2579.33, H@1: 0.374, H@3: 0.451, H@10: 0.519 | 
+[2025-05-15 18:55:12,129][root][INFO] - Epoch:  38 | Loss: 0.0004 | Val - MRR: 0.4343, MR: 2797.37, H@1: 0.385, H@3: 0.457, H@10: 0.523 | Test - MRR: 0.4317 | *
+[2025-05-15 18:59:18,957][root][INFO] - Epoch:  39 | Loss: 0.0004 | Val - MRR: 0.4373, MR: 2498.63, H@1: 0.386, H@3: 0.464, H@10: 0.528 | Test - MRR: 0.4369 | *
+[2025-05-15 19:03:23,509][root][INFO] - Epoch:  40 | Loss: 0.0004 | Val - MRR: 0.4403, MR: 2540.64, H@1: 0.391, H@3: 0.467, H@10: 0.527 | Test - MRR: 0.4427 | *
+[2025-05-15 19:07:29,165][root][INFO] - Epoch:  41 | Loss: 0.0004 | Val - MRR: 0.4410, MR: 2596.38, H@1: 0.391, H@3: 0.467, H@10: 0.530 | Test - MRR: 0.4417 | *

@@ -1,0 +1,6 @@
+[2025-05-15 14:08:59,034][root][INFO] - 
+------Config------
+ {'dataset': 'WN18RR', 'epoch': 800, 'batch_size': 256, 'learning_rate': 0.0015, 'h_dim': 200, 'pred_rel_w': True, 'label_smooth': 0.1, 'kg_layer': 1, 'rm_rate': 0.5, 'ent_drop': 0.2, 'rel_drop': 0, 'comp_op': 'mul', 'bn': True, 'k_h': 10, 'k_w': 20, 'ent_drop_pred': 0.3, 'conv_drop': 0.1, 'fc_drop': 0.4, 'ker_sz': 7, 'out_channel': 250, 'device': 0, 'max_no_improve': 50, 'cpu_worker_num': 10, 'warmup_epoch': 5}
+[2025-05-15 14:08:59,034][root][INFO] - Code dir path: /home/evsjtu/wcf/SE-GNN-main/code
+[2025-05-15 14:08:59,035][root][INFO] - Config dir path: /home/evsjtu/wcf/SE-GNN-main/config
+[2025-05-15 14:08:59,035][root][INFO] - Model save path: /home/evsjtu/wcf/SE-GNN-main/data/output/WN18RR/2025-05-15/14-08-58

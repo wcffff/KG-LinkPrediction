@@ -1,0 +1,42 @@
+[2025-05-15 15:39:21,853][root][INFO] - 
+------Config------
+ {'dataset': 'WN18RR', 'epoch': 800, 'batch_size': 256, 'learning_rate': 0.0015, 'h_dim': 200, 'pred_rel_w': True, 'label_smooth': 0.1, 'kg_layer': 1, 'rm_rate': 0.5, 'ent_drop': 0.2, 'rel_drop': 0, 'comp_op': 'mul', 'bn': True, 'k_h': 10, 'k_w': 20, 'ent_drop_pred': 0.3, 'conv_drop': 0.1, 'fc_drop': 0.4, 'ker_sz': 7, 'out_channel': 250, 'device': 1, 'max_no_improve': 50, 'cpu_worker_num': 10, 'warmup_epoch': 5}
+[2025-05-15 15:39:21,854][root][INFO] - Code dir path: /home/evsjtu/wcf/SE-GNN-main/code
+[2025-05-15 15:39:21,854][root][INFO] - Config dir path: /home/evsjtu/wcf/SE-GNN-main/config
+[2025-05-15 15:39:21,854][root][INFO] - Model save path: /home/evsjtu/wcf/SE-GNN-main/data/output/WN18RR/2025-05-15/15-39-21
+[2025-05-15 15:39:24,968][root][INFO] - kg # node: 40943
+[2025-05-15 15:39:24,970][root][INFO] - kg # edge: 173670
+[2025-05-15 15:39:24,970][root][INFO] - kg # zero deg node: 384
+[2025-05-15 15:39:24,971][root][INFO] - ---Load Train Data---
+[2025-05-15 15:39:26,510][root][INFO] - -----Model Parameter Configuration-----
+[2025-05-15 15:39:26,511][root][INFO] - Parameter ent_emb: torch.Size([40943, 200]), require_grad = True
+[2025-05-15 15:39:26,511][root][INFO] - Parameter rel_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 15:39:26,512][root][INFO] - Parameter edge_layers.0.w_o: torch.Size([200, 200]), require_grad = True
+[2025-05-15 15:39:26,512][root][INFO] - Parameter edge_layers.0.w_i: torch.Size([200, 200]), require_grad = True
+[2025-05-15 15:39:26,512][root][INFO] - Parameter edge_layers.0.neigh_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 15:39:26,513][root][INFO] - Parameter edge_layers.0.bn.weight: torch.Size([200]), require_grad = True
+[2025-05-15 15:39:26,513][root][INFO] - Parameter edge_layers.0.bn.bias: torch.Size([200]), require_grad = True
+[2025-05-15 15:39:26,513][root][INFO] - Parameter node_layers.0.w_o: torch.Size([200, 200]), require_grad = True
+[2025-05-15 15:39:26,514][root][INFO] - Parameter node_layers.0.w_i: torch.Size([200, 200]), require_grad = True
+[2025-05-15 15:39:26,514][root][INFO] - Parameter node_layers.0.neigh_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 15:39:26,514][root][INFO] - Parameter node_layers.0.bn.weight: torch.Size([200]), require_grad = True
+[2025-05-15 15:39:26,515][root][INFO] - Parameter node_layers.0.bn.bias: torch.Size([200]), require_grad = True
+[2025-05-15 15:39:26,515][root][INFO] - Parameter comp_layers.0.neigh_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 15:39:26,516][root][INFO] - Parameter comp_layers.0.w_o: torch.Size([200, 200]), require_grad = True
+[2025-05-15 15:39:26,516][root][INFO] - Parameter comp_layers.0.w_i: torch.Size([200, 200]), require_grad = True
+[2025-05-15 15:39:26,516][root][INFO] - Parameter comp_layers.0.bn.weight: torch.Size([200]), require_grad = True
+[2025-05-15 15:39:26,517][root][INFO] - Parameter comp_layers.0.bn.bias: torch.Size([200]), require_grad = True
+[2025-05-15 15:39:26,517][root][INFO] - Parameter rel_embs.0: torch.Size([22, 200]), require_grad = True
+[2025-05-15 15:39:26,517][root][INFO] - Parameter predictor.bias: torch.Size([40943]), require_grad = True
+[2025-05-15 15:39:26,518][root][INFO] - Parameter predictor.bn0.weight: torch.Size([1]), require_grad = True
+[2025-05-15 15:39:26,518][root][INFO] - Parameter predictor.bn0.bias: torch.Size([1]), require_grad = True
+[2025-05-15 15:39:26,518][root][INFO] - Parameter predictor.bn1.weight: torch.Size([64]), require_grad = True
+[2025-05-15 15:39:26,519][root][INFO] - Parameter predictor.bn1.bias: torch.Size([64]), require_grad = True
+[2025-05-15 15:39:26,519][root][INFO] - Parameter predictor.bn2.weight: torch.Size([200]), require_grad = True
+[2025-05-15 15:39:26,519][root][INFO] - Parameter predictor.bn2.bias: torch.Size([200]), require_grad = True
+[2025-05-15 15:39:26,520][root][INFO] - Parameter predictor.conv1.filter.weight: torch.Size([22, 576]), require_grad = True
+[2025-05-15 15:39:26,520][root][INFO] - Parameter predictor.conv1.bn.weight: torch.Size([64]), require_grad = True
+[2025-05-15 15:39:26,520][root][INFO] - Parameter predictor.conv1.bn.bias: torch.Size([64]), require_grad = True
+[2025-05-15 15:39:26,521][root][INFO] - Parameter predictor.fc.weight: torch.Size([200, 25600]), require_grad = True
+[2025-05-15 15:39:26,521][root][INFO] - Parameter predictor.fc.bias: torch.Size([200]), require_grad = True
+[2025-05-15 15:39:27,682][root][INFO] - Training... total epoch: 800, step: 324000

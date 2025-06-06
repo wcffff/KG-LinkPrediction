@@ -1,0 +1,38 @@
+[2025-05-15 13:34:46,089][root][INFO] - 
+------Config------
+ {'dataset': 'WN18RR', 'epoch': 800, 'batch_size': 256, 'learning_rate': 0.0015, 'h_dim': 200, 'pred_rel_w': True, 'label_smooth': 0.1, 'kg_layer': 1, 'rm_rate': 0.5, 'ent_drop': 0.2, 'rel_drop': 0, 'comp_op': 'mul', 'bn': True, 'k_h': 10, 'k_w': 20, 'ent_drop_pred': 0.3, 'conv_drop': 0.1, 'fc_drop': 0.4, 'ker_sz': 7, 'out_channel': 250, 'device': 0, 'max_no_improve': 50, 'cpu_worker_num': 10, 'warmup_epoch': 5}
+[2025-05-15 13:34:46,090][root][INFO] - Code dir path: /home/evsjtu/wcf/SE-GNN-main/code
+[2025-05-15 13:34:46,090][root][INFO] - Config dir path: /home/evsjtu/wcf/SE-GNN-main/config
+[2025-05-15 13:34:46,090][root][INFO] - Model save path: /home/evsjtu/wcf/SE-GNN-main/data/output/WN18RR/2025-05-15/13-34-45
+[2025-05-15 13:34:48,987][root][INFO] - kg # node: 40943
+[2025-05-15 13:34:48,988][root][INFO] - kg # edge: 87445
+[2025-05-15 13:34:48,988][root][INFO] - kg # zero deg node: 1272
+[2025-05-15 13:34:48,988][root][INFO] - ---Load Train Data---
+[2025-05-15 13:34:50,755][root][INFO] - -----Model Parameter Configuration-----
+[2025-05-15 13:34:50,755][root][INFO] - Parameter ent_emb: torch.Size([40943, 200]), require_grad = True
+[2025-05-15 13:34:50,755][root][INFO] - Parameter rel_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 13:34:50,755][root][INFO] - Parameter edge_layers.0.w_o: torch.Size([200, 200]), require_grad = True
+[2025-05-15 13:34:50,756][root][INFO] - Parameter edge_layers.0.w_i: torch.Size([200, 200]), require_grad = True
+[2025-05-15 13:34:50,756][root][INFO] - Parameter edge_layers.0.neigh_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 13:34:50,756][root][INFO] - Parameter edge_layers.0.bn.weight: torch.Size([200]), require_grad = True
+[2025-05-15 13:34:50,756][root][INFO] - Parameter edge_layers.0.bn.bias: torch.Size([200]), require_grad = True
+[2025-05-15 13:34:50,756][root][INFO] - Parameter node_layers.0.w_o: torch.Size([200, 200]), require_grad = True
+[2025-05-15 13:34:50,756][root][INFO] - Parameter node_layers.0.w_i: torch.Size([200, 200]), require_grad = True
+[2025-05-15 13:34:50,757][root][INFO] - Parameter node_layers.0.neigh_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 13:34:50,757][root][INFO] - Parameter node_layers.0.bn.weight: torch.Size([200]), require_grad = True
+[2025-05-15 13:34:50,757][root][INFO] - Parameter node_layers.0.bn.bias: torch.Size([200]), require_grad = True
+[2025-05-15 13:34:50,757][root][INFO] - Parameter comp_layers.0.neigh_w: torch.Size([200, 200]), require_grad = True
+[2025-05-15 13:34:50,757][root][INFO] - Parameter comp_layers.0.w_o: torch.Size([200, 200]), require_grad = True
+[2025-05-15 13:34:50,757][root][INFO] - Parameter comp_layers.0.w_i: torch.Size([200, 200]), require_grad = True
+[2025-05-15 13:34:50,757][root][INFO] - Parameter comp_layers.0.bn.weight: torch.Size([200]), require_grad = True
+[2025-05-15 13:34:50,757][root][INFO] - Parameter comp_layers.0.bn.bias: torch.Size([200]), require_grad = True
+[2025-05-15 13:34:50,758][root][INFO] - Parameter rel_embs.0: torch.Size([22, 200]), require_grad = True
+[2025-05-15 13:34:50,758][root][INFO] - Parameter predictor.bn0.weight: torch.Size([1]), require_grad = True
+[2025-05-15 13:34:50,758][root][INFO] - Parameter predictor.bn0.bias: torch.Size([1]), require_grad = True
+[2025-05-15 13:34:50,758][root][INFO] - Parameter predictor.bn1.weight: torch.Size([250]), require_grad = True
+[2025-05-15 13:34:50,758][root][INFO] - Parameter predictor.bn1.bias: torch.Size([250]), require_grad = True
+[2025-05-15 13:34:50,758][root][INFO] - Parameter predictor.bn2.weight: torch.Size([200]), require_grad = True
+[2025-05-15 13:34:50,758][root][INFO] - Parameter predictor.bn2.bias: torch.Size([200]), require_grad = True
+[2025-05-15 13:34:50,759][root][INFO] - Parameter predictor.conv.weight: torch.Size([250, 1, 7, 7]), require_grad = True
+[2025-05-15 13:34:50,759][root][INFO] - Parameter predictor.fc.weight: torch.Size([200, 49000]), require_grad = True
+[2025-05-15 13:34:51,711][root][INFO] - Training... total epoch: 800, step: 324800
